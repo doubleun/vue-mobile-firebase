@@ -43,7 +43,7 @@
       ></v-list-item>
     </v-list>
   </v-navigation-drawer>
-  <v-main style="height: fit-content; padding-block: 0.5rem">
+  <v-main style="height: fit-content; padding-block: 0.5rem" class="navbar">
     <div class="d-flex justify-start align-center pl-2 h-100">
       <v-app-bar-nav-icon
         variant="text"
@@ -81,12 +81,10 @@ export default {
         }
 
         if (user) {
-          console.log('user', user)
+          // console.log('user', user)
           name.value = user.email.split('@')[0]
         }
 
-        // if (user?.photoURL) {
-        // }
         photoURL.value = user?.photoURL
       })
     })
@@ -95,7 +93,7 @@ export default {
       try {
         await auth.signOut()
       } catch (e) {
-        console.log('error: ', e)
+        console.error('error: ', e)
       }
     }
 
@@ -107,3 +105,10 @@ export default {
   },
 }
 </script>
+
+<style>
+.navbar {
+  background-color: #3b81c8;
+  color: white;
+}
+</style>

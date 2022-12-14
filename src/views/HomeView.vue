@@ -8,25 +8,8 @@
 <script>
 import { defineComponent } from 'vue'
 
-// Components
-// import AppNavbar from '../components/AppNavbar.vue'
-
 export default defineComponent({
   name: 'HomeView',
-  data() {
-    return {
-      username: '',
-      password: '',
-    }
-  },
-  // components: {
-  //   AppNavbar,
-  // },
-  methods: {
-    handleLogin() {
-      console.log('logged in')
-    },
-  },
 })
 </script>
 

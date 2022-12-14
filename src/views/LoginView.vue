@@ -74,8 +74,6 @@ export default defineComponent({
 
     const handleLogin = async () => {
       try {
-        console.log('username', username.value)
-        console.log('password', password)
         const data = await signInWithEmailAndPassword(
           auth,
           username.value,
@@ -83,7 +81,7 @@ export default defineComponent({
         )
         console.log('data', data)
       } catch (e) {
-        console.log('error: ', e.message)
+        console.error('error: ', e.message)
       }
     }
 
@@ -91,7 +89,7 @@ export default defineComponent({
       try {
         await signInWithPopup(auth, provider)
       } catch (e) {
-        console.log('error: ', e.message)
+        console.error('error: ', e.message)
       }
     }
     return {
